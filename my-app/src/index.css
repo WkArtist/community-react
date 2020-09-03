@@ -1,0 +1,19 @@
+@import "http://at.alicdn.com/t/font_2016334_1vv3ails3k6.css";
+
+@font-face {
+  font-family: PingFang-SC-Medium;
+  src: url("./assets/font/PingFang Medium_0.ttf");
+}
+@font-face {
+    font-family: Helvetica;
+    src: url("./assets/font/Helvetica.TTF");
+  }
+html,body{
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/img/bg_white.png);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
