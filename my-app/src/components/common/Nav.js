@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Nav.scss'
 import 'animate.css'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
+import {NavLink,Link} from 'react-router-dom'
 
 export default class Nav extends Component {
 
@@ -16,10 +17,30 @@ export default class Nav extends Component {
             time: '10:54:23',
             currentDate: '2019-12-20',
             day: '星期五',
+            router: [
+                {
+                    name: '总览',
+                    route: '/overview',
+                    toUe4: 'navSummarize',
+                    children: []
+                }, {
+                    name: '综合',
+                    children: []
+                }, {
+                    name: '治理',
+                    children: []
+                }, {
+                    name: '服务',
+                    children: []
+                }, {
+                    name: '便民',
+                    children: []
+                }
+            ],
             routerList: [
                 {
                   name: '总览',
-                  route: 'Overview',
+                  route: '/overview',
                   toUe4: 'navSummarize',
                   children: []
                 }, {
@@ -27,12 +48,12 @@ export default class Nav extends Component {
                   children: [
                     {
                       name: '人房',
-                      route: 'HumanRoom',
+                      route: '/complex/humanroom',
                       toUe4: 'navPeopleAndHouse',
                       children: []
                     }, {
                       name: '车库',
-                      route: 'Garage',
+                      route: '/complex/garage',
                       toUe4: 'navGarage',
                       children: []
                     }, {
@@ -144,6 +165,8 @@ export default class Nav extends Component {
                   ]
                 }
             ],
+            timer1: null,
+            timer2: null
         }
 
         
@@ -152,16 +175,16 @@ export default class Nav extends Component {
     async renderWeatherData() {
         const res = await this.$api.common.getWeatherData()
         console.log('天气数据', res)
-        if (res.data.success) {
-            const data = res.data.data
-            this.setState({
-                weather: {
-                    pm: data['pm2.5'],
-                    skycon: data.skycon,
-                    temperature: data.temperature.toFixed()
-                }
-            })
-        }
+        // if (res.data.success) {
+        //     const data = res.data.data
+        //     this.setState({
+        //         weather: {
+        //             pm: data['pm2.5'],
+        //             skycon: data.skycon,
+        //             temperature: data.temperature.toFixed()
+        //         }
+        //     })
+        // }
     }
 
     getCurrentTime() {
@@ -179,6 +202,25 @@ export default class Nav extends Component {
         this.renderWeatherData()
     }
 
+    levelOneShow(index) {
+        const levelOneData = JSON.parse(JSON.stringify(this.state.routerList[index].children))
+        let temp = JSON.parse(JSON.stringify(this.state.router))
+        temp[index].children = levelOneData
+        this.setState({
+            router: temp
+        })
+    }
+
+    levelOneHide() {
+        let temp = JSON.parse(JSON.stringify(this.state.router))
+        temp.forEach(e => {
+            e.children = []
+        })
+        this.setState({
+            router: temp
+        })
+    }
+
     render() {
         return (
             <div className="nav-wrap">
@@ -186,11 +228,31 @@ export default class Nav extends Component {
 
                 <div className="router">
                     {
-                        this.state.routerList.map((ele) => {
-                            <span className="router-link">{ele.name}</span>
+                        this.state.router.map((ele, index) => {
+                            return (
+                                <Link className="router-level"
+                                    to={ele.route}
+                                    onMouseEnter={() => this.levelOneShow(index)}
+                                    onMouseLeave={() => this.levelOneHide()}
+                                    key={ele.name}>
+                                    <span className="router-link">{ele.name}</span>
+                                    {
+                                        ele.children.map((item) => {
+                                            return <div className="level1" key={item.name}>
+                                                <Link
+                                                    to={item.route} 
+                                                    className="router-level router-level1">
+                                                    <span className="router-link">{item.name}</span>
+                                                </Link>
+                                            </div>
+                                        })
+                                    }
+                                </Link>
+                                
+                            )
+                            
                         })
                     }
-                    <div className="router-level"></div>
                 </div>
 
                 <div className="date">

@@ -1,0 +1,43 @@
+.home{
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    .left-top{
+        position: absolute;
+        left: 30px;
+        top: 165px;
+      }
+      .left-middle{
+        position: absolute;
+        left: 30px;
+        top: 440px;
+      }
+      .left-bottom{
+        position: absolute;
+        left: 30px;
+        top: 713px;
+      }
+  
+      .right-top{
+        position: absolute;
+        left: 1540px;
+        top: 165px;
+      }
+  
+      .right-middle{
+        position: absolute;
+        left: 1540px;
+        top: 415px;
+      }
+  
+      .right-bottom{
+        position: absolute;
+        left: 1540px;
+        top: 750px;
+      }
+      .reset-and-refresh{
+        position: absolute;
+        left: 1478px;
+        top: 165px;
+      }
+}

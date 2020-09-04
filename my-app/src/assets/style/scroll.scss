@@ -1,0 +1,13 @@
+@mixin scroll() {
+    padding-right: 8px;
+    &::-webkit-scrollbar {
+        width: 2px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $scrollbarTrackColor;
+        border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $scrollbarBarColor;
+    }
+}

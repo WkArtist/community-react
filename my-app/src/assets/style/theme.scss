@@ -1,0 +1,57 @@
+//基本颜色
+$cyan: #2ED6E6; //青色
+$blue: #2B96FF; //蓝色
+$yellow: #FFBB33; //黄色
+$green: #2AD49A; //绿色
+$red: #FF5577; //红色
+$purple: #A667EA; //紫色
+$darkGrey: #8E8E8E; //深灰
+$lightGrey: #D9D9D9; //浅灰
+$black: #000000; //黑色
+$white: #FFFFFF; //白色
+
+//字体尺寸
+$auxiliaryText: 12px; //辅助文字/辅助标题
+$commonContentText: 14px; //通用内容
+$smallHeadingsText: 16px; //小标题
+$bigHeadingsText: 18px; //大标题
+$numberXLText: 20px; //数字大字号1
+$numberXXLText: 24px; //数字大字号2
+$superText: 28px; //超大字号
+
+//框体
+$boxBg: rgba($color: $black, $alpha: 0.2); //盒子背景颜色
+$boxTitleBg: rgba($color: $black, $alpha: 0.6); //盒子标题背景颜色
+$boxContentBg: rgba($color: $black, $alpha: 0.5); //盒子内容背景
+$boxWidth: 350px; //盒子宽度
+$boxPadding: 10px; //盒子内边距
+$boxContentPadding: 15px; //盒子内容内边距
+
+//边框标准
+$lineColor: rgba($color: $white, $alpha: 0.3);//线颜色
+
+//hover标准
+$itemHoverBg: rgba($color: $white, $alpha: 0.1);//hover后背景颜色
+
+//圆角
+$borderRadiusSize: 4px; //圆角尺寸
+
+//标签
+$tagBg: rgba($color: $lightGrey, $alpha: 0.2); //标签底色
+$tagColor: rgba($color: $lightGrey, $alpha: 1); //标签字体颜色
+$tagBgActive: rgba($color: $cyan, $alpha: 0.2); //标签激活后底色
+$tagColorActive: rgba($color: $cyan, $alpha: 1); //标签激活后字体颜色
+
+$tagCyanBg: rgba($color: $cyan, $alpha: 0.2);
+$tagYellowBg: rgba($color: $yellow, $alpha: 0.2);
+$tagRedBg: rgba($color: $yellow, $alpha: 0.2);
+$tagGreenBg: rgba($color: $yellow, $alpha: 0.2);
+$tagPurpleBg: rgba($color: $yellow, $alpha: 0.2);
+
+$innerBoxBg: rgba($color: $white, $alpha: 0.2); // 内部box底色 
+
+//滚动条
+$scrollbarTrackColor: rgba($color: $darkGrey, $alpha: 0.5);
+$scrollbarBarColor: rgba($color: $cyan, $alpha: 1);
+
+

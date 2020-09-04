@@ -9,12 +9,12 @@ import Blank from "./components/common/blank"
 function App() {
   return (
     <div className="App">
-      <Nav />
       <Router>
+        <Nav />
         <Switch>
+          <Route path="/" exact component={Overview}></Route>
           <Route path="/overview" exact component={Overview}></Route>
-          <Route path="/complex" exa component={Complex}></Route>
-          <Redirect from="/" exact to="/overview"></Redirect>
+          <Route path="/complex" component={Complex}></Route>
           <Route component={Blank}></Route>
         </Switch>
       </Router>

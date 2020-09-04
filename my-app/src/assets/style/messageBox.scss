@@ -1,0 +1,109 @@
+@import './theme.scss';
+@mixin message-box($wrapHeight: 268px, $width: $boxWidth) {
+    .message-box-wrap{
+        width: $width;
+        height: $wrapHeight;
+        background-color: $boxBg;
+    
+        .title{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: $width - $boxPadding;
+            height: 40px;
+            background-color: $boxTitleBg;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 1;
+    
+            .text{
+                margin-left: 15px;
+                font-size: 18px;
+                display: flex;
+                overflow: hidden;
+                height: 40px;
+                width: 160px;
+                line-height: 40px;
+                &::before{
+                    content: '';
+                    display: block;
+                    width: 3px;
+                    height: 18px;
+                    margin-top: 11px;
+                    background-color: $yellow;
+                    margin-right: 5px;
+                }
+            }
+            .tab{
+                position: absolute;
+                right: 0;
+                margin-right: 15px;
+                height: 40px;
+                overflow: hidden;
+                line-height: 40px;
+                span{
+                    width: 34px;
+                    height: 16px;
+                    font-size: 12px;
+                    
+                    line-height: 16px;
+                    color: $tagColor;
+                    background-color: $tagBg;
+                    margin-left: 3px;
+                    padding: 0px 5px;
+                    cursor: pointer;
+    
+                    &.active{
+                        background-color: $tagBgActive;
+                        color: $tagColorActive;
+                    }
+                }
+            }
+            .number{
+                color: $cyan;
+                font-size: $bigHeadingsText;
+                margin-left: 120px;
+                width: 80px;
+                margin-right: 5px;
+                text-align: right;
+                .unit{
+                    font-size: $auxiliaryText;
+                    color: $darkGrey;
+                    margin-left: 5px;
+                }
+            }
+            .el-icon-close{
+                margin-right: 5px;
+                cursor: pointer;
+            }
+            .el-icon-arrow-right{
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            .el-icon-arrow-left{
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+    
+        .content{
+            position: absolute;
+            left: 0;
+            top: 40px + $boxPadding;
+            width: $width - $boxPadding;
+            height: $wrapHeight - 50px - $boxPadding;
+            box-sizing: border-box;
+            background-color: $boxContentBg;
+            padding: 15px;
+            font-size: $commonContentText;
+            box-sizing: border-box;
+            .unit{
+                font-size: $auxiliaryText;
+                color: $darkGrey;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,5 @@
+// @import '../../assets/style/messageBox.scss';
+@include message-box(265px);
+div{
+    color: $red;
+}
