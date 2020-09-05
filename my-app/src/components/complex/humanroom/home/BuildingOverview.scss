@@ -1,0 +1,185 @@
+@import "../../../../assets/style/messageBox.scss";
+    @include message-box(254px);
+    @mixin textSpan($color) {
+
+        color: $color;
+        font-weight: bold;
+        font-size: 32px;
+        margin-left: 10px;
+        width: 75px;
+        text-align: end;
+        display: inline-block;
+    }
+    .community-wrap{
+      .top{
+        width: 100%;
+        height: 130px;
+        box-sizing: border-box;
+        border-bottom: 1px solid $lineColor;
+        .all-number{
+            width: 100%;
+            height: 30px;
+            text-align: left;
+            font-size: $smallHeadingsText;
+            display: flex;
+            justify-content: start;
+            span{
+                color: $cyan;
+                font-size: $numberXLText;
+                width: 110px;
+                text-align: right;
+                display: inline-block;
+            }
+            .unit{
+              line-height: 30px;
+            }
+        }
+
+        .single-building-message{
+            width: 100%;
+            height: 115px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            p{
+                margin-bottom: 20px;
+
+                .message-title{
+                    display: inline-block;
+                    width: 80px;
+                    text-align: left;
+                }
+                .message-value{
+                    margin-left: 15px;
+                }
+            }
+        }
+
+        .chart-wrap{
+            // height: 115px;
+            width: 100%;
+            position: relative;
+            margin-top: 10px;
+
+            .chart-pie{
+                width: 75px;
+                height: 75px;
+                margin-left: 5px;
+            }
+
+            .pie-legend{
+                position: absolute;
+                left: 114px;
+                top: 10px;
+
+                .legend-item{
+                    color: #fff;
+
+                    font-size: 14px;
+                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+
+                    .green-icon{
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        margin-right: 5px;
+                        border: 2px solid $green;
+                        box-sizing: border-box;
+                    }
+                    .cyan-icon{
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        margin-right: 5px;
+                        border: 2px solid $blue;
+                        box-sizing: border-box;
+                    }
+                    .key{
+                        font-size: $commonContentText;
+                        width: 85px;
+                        text-align: left;
+                    }
+                    .value{
+                        width: 78px;
+                        font-size: $numberXLText;
+                        text-align: right;
+                    }
+                    .unit{
+                      position: relative;
+                      top: 3px;
+                    }
+                }
+            }
+        }
+      }
+      .bottom{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        font-size: $commonContentText;
+        color: $white;
+        .message-item{
+          display: flex;
+          align-items: center;
+          span{
+              display: inline-block;
+
+              font-size: $commonContentText;
+              color: $cyan;
+              width: 65px;
+              text-align: right;
+          }
+          .unit{
+            position: relative;
+            top: 1px;
+          }
+        }
+
+      }
+    }
+    .building-wrap{
+      .building-item{
+        width: 100%;
+        height: 60px;
+        box-sizing: border-box;
+        border-bottom: 1px solid $lineColor;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        &:last-of-type{
+          border-bottom: 1px solid transparent;
+        }
+        &.building-top{
+          justify-content: start;
+          .top-name{
+            color: $white;
+            font-size: 16px;
+            line-height: 60px;
+          }
+          .top-value{
+            position: relative;
+            top: -3px;
+            color: $cyan;
+            font-size: $superText;
+            line-height: 60px;
+          }
+        }
+        .key{
+          color: $lightGrey;
+          line-height: 60px;
+          margin-left: 5px;
+        }
+        .value{
+          line-height: 60px;
+          margin-right: 5px;
+        }
+      }
+    }

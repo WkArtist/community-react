@@ -7,8 +7,12 @@ export default class index extends Component {
     render() {
         return (
             <div>
-                <Route path="/complex/humanroom" exact component={Humanroom}></Route>
-                <Route path="/complex/garage" exact component={Garage}></Route>
+                <Switch>
+                    <Route path="/complex/humanroom" component={Humanroom}></Route>
+                    <Route path="/complex/garage" component={Garage}></Route>
+                    <Redirect from="/complex" to="/complex/humanroom"></Redirect>
+                </Switch>
+                
             </div>
         )
     }

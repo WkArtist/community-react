@@ -1,5 +1,29 @@
-// @import '../../assets/style/messageBox.scss';
+@import '../../assets/style/messageBox.scss';
 @include message-box(265px);
-div{
-    color: $red;
+
+.content-wrap{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    .all-number{
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      color: #FFF;
+      font-size: $commonContentText;
+      font-weight: 400;
+      height: 35px;
+      line-height: 35px;
+      overflow: hidden;
+      span{
+          color: $cyan;
+          font-size: $superText;
+          margin-left: 15px;
+          vertical-align: baseline;
+      }
+    }
+    .chart{
+        width: 100%;
+        height: 100%;
+    }
 }

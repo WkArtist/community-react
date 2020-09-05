@@ -13,7 +13,7 @@ function App() {
         <Nav />
         <Switch>
           <Route path="/" exact component={Overview}></Route>
-          <Route path="/overview" exact component={Overview}></Route>
+          <Route path="/overview" component={Overview}></Route>
           <Route path="/complex" component={Complex}></Route>
           <Route component={Blank}></Route>
         </Switch>

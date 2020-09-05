@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './Nav.scss'
 import 'animate.css'
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import {NavLink,Link} from 'react-router-dom'
 
 export default class Nav extends Component {

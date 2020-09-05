@@ -1,0 +1,44 @@
+@import '../../../assets/style/theme.scss';
+.human-room-wrap{
+    position: relative;
+
+    .back-btn{
+      position: absolute;
+      left: 30px;
+      top: 120px;
+      width: 100px;
+      height: 35px;
+      font-size: 14px;
+      color: #D9D9D9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      background-image: url(../../../assets/img/btn.png);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      &:hover{
+        color: #2ED6E6;
+        background-image: url(../../../assets/img/btn_active.png);
+      }
+    }
+
+    .currentBuilding{
+      position: absolute;
+      left: 143px;
+      top: 120px;
+      padding: 0 15px;
+      height: 35px;
+      background-color: $boxTitleBg;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: $commonContentText;
+      color: $white;
+    }
+    .switch-floors{
+        position: absolute;
+        left: 1811px;
+        top: 623px;
+      }
+  }
